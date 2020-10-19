@@ -1,6 +1,7 @@
 package java201019;
 
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Exam1 {
 	/*
@@ -24,9 +25,8 @@ public class Exam1 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		String[] titles = new String[10];
-		String[] bodise = new String[10];
-		int size = 0;
+		ArrayList<String>titles = new ArrayList<>();
+		ArrayList<String>bodies = new ArrayList<>();
 
 		while (true) {
 			System.out.print("명령어 입력 : ");
@@ -38,16 +38,16 @@ public class Exam1 {
 			if (cmd.equals("add")) {
 
 				System.out.println("게시물 제목을 입력해주세요 :");
-				titles[size] = sc.next();
+				titles.add(sc.next()); 
 				System.out.println("게시물 내용을 입력해주세요 :");
-				bodise[size] = sc.next();
+				bodies.add(sc.next());
 				System.out.println("게시물이 등록되었습니다.");
-				size++;
+				
 			}
 			if (cmd.equals("list")) {
-				for (int i = 0; i < size; i++) {
-					System.out.println("제목 : " + titles[i]);
-					System.out.println("내용 : " + bodise[i]);
+				for (int i = 0; i < titles.size(); i++) {
+					System.out.println("제목 : " + titles.get(i));
+					System.out.println("내용 : " + bodies.get(i));
 					System.out.println("======================");
 
 				}
