@@ -25,8 +25,9 @@ public class Exam1 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		ArrayList<String>titles = new ArrayList<>();
-		ArrayList<String>bodies = new ArrayList<>();
+		ArrayList<String> titles = new ArrayList<>();
+		ArrayList<String> bodies = new ArrayList<>();
+		
 
 		while (true) {
 			System.out.print("명령어 입력 : ");
@@ -38,11 +39,11 @@ public class Exam1 {
 			if (cmd.equals("add")) {
 
 				System.out.println("게시물 제목을 입력해주세요 :");
-				titles.add(sc.next()); 
+				titles.add(sc.next());
 				System.out.println("게시물 내용을 입력해주세요 :");
 				bodies.add(sc.next());
 				System.out.println("게시물이 등록되었습니다.");
-				
+
 			}
 			if (cmd.equals("list")) {
 				for (int i = 0; i < titles.size(); i++) {
@@ -52,6 +53,25 @@ public class Exam1 {
 
 				}
 			}
+			if(cmd.equals("update")) {
+				
+				System.out.println("수정할 게시물 선택");
+				String targerTitle = sc.next();
+				
+				for(int i = 0; i < titles.size(); i++) {
+					if(titles.get(i).equals(targerTitle)) {
+						System.out.println("게시물 제목을 입력해주세요 :");
+						titles.add(sc.next());
+						System.out.println("게시물 내용을 입력해주세요 :");
+						bodies.add(sc.next());
+						System.out.println("게시물이 등록되었습니다.");
+						
+					}
+				}
+				
+
+			}
+			
 
 		}
 	}
